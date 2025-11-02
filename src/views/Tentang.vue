@@ -1,6 +1,15 @@
+
 <template>
-  <div>
-    <h1>Tentang Kami</h1>
-    <p>Informasi tentang aplikasi Mancingku.</p>
+  <div class="about-content">
+    <AboutContent />
+    <BlogSection />
   </div>
 </template>
+
+<script setup>
+import AboutContent from '@/components/AboutContent.vue';
+import BlogSection from '@/components/BlogSection.vue';
+</script>
+
+<style scoped>
+</style>
