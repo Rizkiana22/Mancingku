@@ -1,6 +1,6 @@
 <template>
   <div class="hero-content">
-    <h1>“Booking Tempat Pemancingan di Sekitar Anda”</h1>
+    <h2>“Booking Tempat Pemancingan di Sekitar Anda”</h2>
     <p>
       Temukan pemancingan terdekat, lihat fasilitas dan harga, lalu pesan tempat
       dengan mudah
@@ -14,25 +14,34 @@
   width: 100%;
 }
 
-.hero-content h1 {
+.hero-content h2 {
   color: #fff;
-  margin-bottom: 1rem;
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 700;
-  line-height: 1.3em;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  
 }
 
 .hero-content p {
-  margin-bottom: 2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
   color: #ccc;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size:1.2rem;
 }
 
 .hero-content .btn {
-  background-color: #da9723;
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  background-color: #FEA100;
+  border: none;
+  padding: 12px 35px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-content .btn:hover{
+  background-color: #e28e00;
 }
 
 @media (max-width: 768px) {

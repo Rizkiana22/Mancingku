@@ -1,4 +1,6 @@
 <template>
+  <main class="peralatan-page">
+    <Navbar/>
   <div class="container">
     <h1>Macam - macam Alat Pancing</h1>
 
@@ -21,10 +23,12 @@
     />
 
   </div>
+  </main>
 </template>
 
 <script>
 import EquipmentCard from "@/components/EquipmentCard.vue";
+import Navbar from "@/components/Navbar.vue";
 
 export default {
   name: "EquipmentView",
@@ -33,6 +37,10 @@ export default {
 </script>
 
 <style scoped>
+.peralatan-page{
+    padding: 2rem 4vw;
+  background: #fff;
+}
 .container {
   max-width: 1000px;
   margin: auto;
@@ -41,7 +49,7 @@ export default {
 
 h1 {
   font-size: 30px;
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: bold;
   margin-bottom: 30px;
 }

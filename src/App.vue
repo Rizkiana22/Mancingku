@@ -13,7 +13,7 @@ import Navbar from './components/Navbar.vue'
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-image: url('@/assets/Bg.png');
+  background-image: linear-gradient(rgba(1,1,1,0.1), rgba(0,0,0,0.2)), url('@/assets/Bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -1,4 +1,6 @@
 <template>
+  <main class="umpan-page">
+  <Navbar />
   <div class="container">
     <h1>Macam - macam umpan</h1>
 
@@ -14,6 +16,7 @@
       description="Kroto, telur semut rangrang, populer untuk ikan mas, nila, mujair, dan lele. Aromanya kuat, teksturnya kecil, bisa dipakai langsung di kail atau dicampur pelet/adonan umpan."
     />
   </div>
+  </main>
 </template>
 
 <script>
@@ -26,6 +29,10 @@ export default {
 </script>
 
 <style scoped>
+.umpan-page{
+    padding: 2rem 4vw;
+  background: #fff;
+}
 .container {
   max-width: 1000px;
   margin: auto;
@@ -35,7 +42,7 @@ export default {
 h1 {
   font-size: 30px;
   font-weight: bold;
-  color: white;
+  color: rgb(0, 0, 0);
   margin-bottom: 30px;
 }
 </style>
