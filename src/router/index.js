@@ -7,6 +7,7 @@ import Umpan from '@/views/Umpan.vue'
 import Signin from '@/views/signIn.vue'
 import signUp from '@/views/signUp.vue'
 import Profile from '@/views/Profile.vue'
+import DetailSpot from '@/views/DetailSpot.vue'
 
 const routes = [
   { path: '/', name: 'Beranda', component: Beranda },
@@ -14,6 +15,7 @@ const routes = [
   { path: '/spot', name: 'CariSpot', component: CariSpot },
   { path: '/peralatan', name: 'Peralatan', component: Peralatan },
   { path: '/umpan', name: 'Umpan', component: Umpan },
+  { path: '/spot/:id', name: 'DetailSpot', component: () => import('../views/DetailSpot.vue') },
   { path: '/signIn', name: 'signIn', component: Signin },
   { path: '/signUp', name: 'signUp', component: signUp },
   { path: '/Profile', name: 'Profile', component: Profile },

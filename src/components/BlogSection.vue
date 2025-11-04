@@ -68,7 +68,7 @@
 <style scoped>
 .blog-section {
   max-width: 1200px;
-  margin: 20px auto 80px;
+  margin: 100px auto 10px;
   padding: 0 20px;
 }
 

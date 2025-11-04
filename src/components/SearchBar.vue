@@ -5,11 +5,10 @@
         <span class="icon">📍</span>
         <input
           type="text"
-          placeholder="Kota"
+          placeholder="Nama"
           :value="modelValue"
           @input="$emit('update:modelValue', $event.target.value)"
         />
-        <button class="btn-search">🔍</button>
       </div>
 
       <button class="btn-filter" @click="showFilter = !showFilter">
@@ -19,23 +18,26 @@
       <div v-if="showFilter" class="filter-panel">
         <h3>Batas Harga</h3>
         <div class="price-range">
-            <input type="number" placeholder="Min" />
-            <span>—</span>
-            <input type="number" placeholder="Max" />
+          <input type="number" placeholder="Min" />
+          <span>—</span>
+          <input type="number" placeholder="Max" />
         </div>
 
-        <h3>Penilaian</h3>
-        <div class="ratings">
-            <div class="rating-option" v-for="n in 5" :key="n">
-            <span class="stars">
-                <span v-for="i in 5" :key="i">
-                {{ i <= (6 - n) ? '⭐' : '☆' }}
-                </span>
-            </span>
-            <span>Ke atas</span>
-            </div>
+        <h3>Rating</h3>
+        <div class="star-range">
+          <input type="radio" name="star-range" id="s5" value="5" v-model="rating" />
+          <label for="s5"></label>
+          <input type="radio" name="star-range" id="s4" value="4" v-model="rating" />
+          <label for="s4"></label>
+          <input type="radio" name="star-range" id="s3" value="3" v-model="rating" />
+          <label for="s3"></label>
+          <input type="radio" name="star-range" id="s2" value="2" v-model="rating" />
+          <label for="s2"></label>
+          <input type="radio" name="star-range" id="s1" value="1" v-model="rating" />
+          <label for="s1"></label>
         </div>
 
+        <p>Penilaian: {{ rating }}</p>
         <button class="btn-apply">Terapkan</button>
         </div>
 
@@ -43,16 +45,20 @@
 
     <div class="location-buttons">
       <button class="btn-location">📡 Lokasimu saat ini</button>
-      <button class="btn-map">🗺 pilih lewat peta</button>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
 defineProps({
   modelValue: String
 })
 defineEmits(['update:modelValue'])
+
+const showFilter = ref(false)
+const rating = ref(0)
 </script>
 
 <style scoped>
@@ -67,6 +73,7 @@ defineEmits(['update:modelValue'])
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
 }
 
 .search-input {
@@ -111,6 +118,10 @@ defineEmits(['update:modelValue'])
   cursor: pointer;
 }
 
+.btn-location:hover,
+.btn-map:hover {
+  background: rgba(0, 0, 0, 0.188);
+}
 .filter-panel {
   position: absolute;
   right: 0;
@@ -144,6 +155,37 @@ defineEmits(['update:modelValue'])
   text-align: center;
 }
 
+.star-range {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.star-range input {
+  display: none;
+}
+
+.star-range label {
+  font-size: 25px;
+  color: #ccc; /* warna default abu-abu */
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+/* tampilkan bintang menggunakan pseudo-element */
+.star-range label::before {
+  content: "\2605";
+}
+
+/* saat di-hover atau di-klik */
+.star-range label:hover,
+.star-range label:hover ~ label,
+.star-range input:checked ~ label {
+  color: gold; /* bintang menyala */
+}
+
+
 .ratings {
   display: flex;
   flex-direction: column;
@@ -169,6 +211,10 @@ defineEmits(['update:modelValue'])
   cursor: pointer;
   margin-top: 15px;
   font-weight: bold;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 </style>

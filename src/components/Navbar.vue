@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+    <nav class="navbar" :class="{ 'navbar-profile': isProfilePage }">
     <div class="nav-logo">
       <RouterLink to="/"><h2>Mancingku</h2></RouterLink>
     </div>
@@ -68,10 +68,14 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import { useRoute } from "vue-router";
+
+const route = useRoute();
 
 const isOpen = ref(false);
 const isDropdownOpen = ref(false);
+const isProfilePage = computed(() => route.path === "/profile");
 
 function toggleMenu() {
   isOpen.value = !isOpen.value;
@@ -126,6 +130,11 @@ function closeMenu() {
 .nav-logo a {
   text-decoration: none;
   color: inherit;
+}
+
+.navbar.navbar-profile {
+  background-color: #014b69 !important; /* warna biru tua */
+  transition: background-color 0.3s ease;
 }
 
 /* === Links === */
@@ -203,9 +212,10 @@ function closeMenu() {
 
 .btn-signIN,
 .btn-signUP, .btn-profile {
-  padding: 8px 16px;
+  padding: 0.6rem 1.2rem;
   font-weight: 600;
-  border-radius: 6px;
+  font-size: clamp(14px, 1vw, 16px);
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.1s;
 }
@@ -225,7 +235,7 @@ function closeMenu() {
 .btn-signUP {
   background-color: #1b3c53;
   color: #fff;
-  border: 2px solid #1b3c53;
+  border: 0px;
 }
 
 .btn-profile:hover{

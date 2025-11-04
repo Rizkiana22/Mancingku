@@ -15,4 +15,8 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  server: {
+    host: '0.0.0.0',  // supaya bisa diakses dari jaringan lain
+    port: 5173         // port default Vite
+  }
 })

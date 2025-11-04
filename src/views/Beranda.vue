@@ -17,7 +17,6 @@ import HeroContent from "@/components/HeroContent.vue";
   padding: 0;
 }
 
-/* Biar nggak bisa geser kiri kanan di mobile */
 html,
 body {
   overflow-x: hidden;

@@ -16,7 +16,10 @@
 
     <div class="spot-price">
       <p>{{ spot.price }}</p>
-      <button class="btn-pilih">Pilih</button>
+
+      <router-link :to="`/spot/${spot.id}`" class="btn-pilih">
+        Pilih
+      </router-link>
     </div>
   </div>
 </template>
@@ -65,6 +68,7 @@ defineProps({
   padding: 0.5rem 1rem;
   margin-top: 0.5rem;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .btn-pilih:hover {
