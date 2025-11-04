@@ -45,4 +45,14 @@ h1 {
   color: rgb(0, 0, 0);
   margin-bottom: 30px;
 }
+
+@media (max-width:768px) {
+  h1{
+      font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
 </style>

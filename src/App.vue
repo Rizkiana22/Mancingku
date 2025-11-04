@@ -1,4 +1,5 @@
 <template>
+  
   <div id="app">
     <Navbar />       <!-- Navbar global -->
     <router-view />  <!-- Halaman spesifik muncul di sini -->

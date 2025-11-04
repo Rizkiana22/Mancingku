@@ -13,9 +13,15 @@
 
     <!-- Nav Links -->
     <ul class="nav-links" :class="{ open: isOpen }">
-      <li class="link"><RouterLink to="/" @click="closeMenu">BERANDA</RouterLink></li>
-      <li class="link"><RouterLink to="/tentang" @click="closeMenu">TENTANG</RouterLink></li>
-      <li class="link"><RouterLink to="/spot" @click="closeMenu">SPOT</RouterLink></li>
+      <li class="link">
+        <RouterLink to="/" @click="closeMenu">BERANDA</RouterLink>
+      </li>
+      <li class="link">
+        <RouterLink to="/tentang" @click="closeMenu">TENTANG</RouterLink>
+      </li>
+      <li class="link">
+        <RouterLink to="/spot" @click="closeMenu">SPOT</RouterLink>
+      </li>
 
       <!-- Dropdown PERLENGKAPAN -->
       <li class="dropdown" @click.stop="toggleDropdown">
@@ -24,21 +30,39 @@
         </span>
         <ul class="dropdown-menu" :class="{ open: isDropdownOpen }">
           <li><RouterLink to="/umpan" @click="closeMenu">Umpan</RouterLink></li>
-          <li><RouterLink to="/peralatan" @click="closeMenu">Alat Pancing</RouterLink></li>
+          <li>
+            <RouterLink to="/peralatan" @click="closeMenu"
+              >Alat Pancing</RouterLink
+            >
+          </li>
         </ul>
       </li>
 
       <!-- Mobile Buttons -->
       <div class="mobile-buttons" :class="{ open: isOpen }">
-        <button class="btn-signIN">Masuk</button>
-        <button class="btn-signUP">Daftar</button>
+        <RouterLink to="/Signin" @click="closeMenu" >
+          <button class="btn-signIN">Masuk</button>
+        </RouterLink>
+        <RouterLink to="/Signup" @click="closeMenu"> 
+          <button class="btn-signUP">Daftar</button>
+        </RouterLink>
+         <RouterLink to="/profile" @click="closeMenu">
+        <button class="btn-profile">Profile</button>
+      </RouterLink>
       </div>
     </ul>
 
     <!-- Desktop Buttons -->
     <div class="button desktop-only">
-      <button class="btn-signIN">Masuk</button>
-      <button class="btn-signUP">Daftar</button>
+      <RouterLink to="/Signin" @click="closeMenu">
+         <button class="btn-signIN">Masuk</button>
+      </RouterLink>
+     <RouterLink to="/Signup" @click="closeMenu">
+      <button class="btn-signUP" >Daftar</button>
+     </RouterLink>
+      <RouterLink to="/profile"@click="closeMenu">
+        <button class="btn-profile">Profile</button>
+      </RouterLink>
     </div>
   </nav>
 </template>
@@ -62,7 +86,7 @@ window.addEventListener("click", () => {
   isDropdownOpen.value = false;
 });
 
-function closeMenu(){
+function closeMenu() {
   isOpen.value = false;
   isDropdownOpen.value = false;
 }
@@ -99,7 +123,7 @@ function closeMenu(){
   color: #ffffff;
 }
 
-.nav-logo a{
+.nav-logo a {
   text-decoration: none;
   color: inherit;
 }
@@ -161,7 +185,7 @@ function closeMenu(){
   display: block;
 }
 
-.dropdown-menu li{
+.dropdown-menu li {
   display: block;
   width: 100%;
 }
@@ -178,12 +202,18 @@ function closeMenu(){
 }
 
 .btn-signIN,
-.btn-signUP {
+.btn-signUP, .btn-profile {
   padding: 8px 16px;
   font-weight: 600;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.1s;
+}
+
+.btn-profile{
+  background-color: #1b3c53;
+  color: #fff;
+  border: 0px;
 }
 
 .btn-signIN {
@@ -198,6 +228,9 @@ function closeMenu(){
   border: 2px solid #1b3c53;
 }
 
+.btn-profile:hover{
+  background: #e28e00;
+}
 .btn-signIN:hover {
   background: #e28e00;
   color: #fff;
@@ -238,9 +271,9 @@ function closeMenu(){
 
 /* === Responsive === */
 @media (max-width: 1200px) {
-  .nav-logo a{
-     text-decoration: none;
-  color: inherit;
+  .nav-logo a {
+    text-decoration: none;
+    color: inherit;
   }
   .nav-logo h2 {
     font-size: 22px;
@@ -299,10 +332,9 @@ function closeMenu(){
   }
 
   .btn-signIN,
-  .btn-signUP {
-    width: 80%;
+  .btn-signUP, .btn-profile {
+    width: 100%;
     font-size: 16px;
-    padding: 8px 0;
     border: none;
     border-radius: 6px;
   }

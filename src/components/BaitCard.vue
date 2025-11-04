@@ -44,11 +44,37 @@ export default {
 
 h2 {
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 p {
   font-size: 20px;
   line-height: 1.6;
 }
+
+@media (max-width: 768px){
+   .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+    text-align: justify;
+  }
+
+  h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .equip-img {
+    width: 140px;
+    height: auto;
+    justify-content: center;
+  }
+}
+
 </style>

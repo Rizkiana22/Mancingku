@@ -5,7 +5,9 @@
       Temukan pemancingan terdekat, lihat fasilitas dan harga, lalu pesan tempat
       dengan mudah
     </p>
-    <button class="btn">Lihat</button>
+    <router-link to="/spot">
+      <button class="btn">Lihat</button>
+    </router-link>
   </div>
 </template>
 
@@ -19,18 +21,17 @@
   margin-bottom: 15px;
   font-size: 1.8rem;
   font-weight: 600;
-  
 }
 
 .hero-content p {
   line-height: 1.6;
   margin-bottom: 20px;
   color: #ccc;
-  font-size:1.2rem;
+  font-size: 1.2rem;
 }
 
 .hero-content .btn {
-  background-color: #FEA100;
+  background-color: #fea100;
   border: none;
   padding: 12px 35px;
   border-radius: 8px;
@@ -40,7 +41,7 @@
   transition: 0.3s;
 }
 
-.hero-content .btn:hover{
+.hero-content .btn:hover {
   background-color: #e28e00;
 }
 

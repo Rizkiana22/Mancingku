@@ -14,8 +14,8 @@ export default {
   props: {
     title: String,
     image: String,
-    description: String
-  }
+    description: String,
+  },
 };
 </script>
 
@@ -25,7 +25,7 @@ export default {
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 25px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .content {
@@ -43,7 +43,7 @@ export default {
 
 h2 {
   font-size: 25px;
-  font-weight: bold;
+  font-weight:500;
 }
 
 p {
@@ -51,4 +51,30 @@ p {
   line-height: 1.6;
   color: #333;
 }
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+    text-align: justify;
+  }
+
+  h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .equip-img {
+    width: 140px;
+    height: auto;
+    justify-content: center;
+  }
+}
+
 </style>
