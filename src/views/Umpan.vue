@@ -40,8 +40,9 @@
 
 <style scoped>
 .umpan-page{
-    padding: 2rem 4vw;
+  padding: 2rem 4vw;
   background: #fff;
+  min-height: 100vh;
 }
 .container {
   max-width: 1000px;

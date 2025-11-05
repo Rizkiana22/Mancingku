@@ -30,14 +30,13 @@
 
 <script>
   import EquipmentCard from "@/components/EquipmentCard.vue";
-  import Navbar from "@/components/Navbar.vue";
   import spinningImg from "@/assets/spinning.png";
   import baitcastImg from "@/assets/casting.png";
   import teleskopikImg from "@/assets/teleskopik.png";
 
   export default {
     name: "EquipmentView",
-    components: { Navbar, EquipmentCard },
+    components: {EquipmentCard },
     data() {
       return {
         spinningImg,
@@ -52,6 +51,7 @@
 .peralatan-page {
   padding: 2rem 4vw;
   background: #fff;
+  min-height: 100vh;
 }
 .container {
   max-width: 1000px;

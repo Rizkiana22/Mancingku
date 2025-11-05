@@ -2,32 +2,30 @@
   <div class="blog-section">
     <h2>Blog & Artikel Terbaru</h2>
     <div class="blog-cards">
-      <div class="blog-card">
+
+        <!-- Blog 1 -->
+        <router-link to="/blog/tips-mancing-pemula" class="blog-card">
         <div class="blog-image">
-          <img
-            src="https://source.unsplash.com/800x600/?fishing,angling"
-            alt="Tips Memancing"
-          />
+          <img src="https://hellscanyon.tours/wp-content/uploads/2023/01/RiverAdventuresInc-214207-Pieces-Fishing-Equipment-blogbanner1.jpg" alt="Tips Memancing" />
         </div>
         <div class="blog-content">
           <h3>Tips Memancing untuk Pemula</h3>
           <p>
-            Panduan lengkap bagi pemula yang ingin memulai hobi memancing. Mulai
-            dari pemilihan alat hingga teknik dasar.
+            Panduan lengkap bagi pemula yang ingin memulai hobi memancing. Mulai dari
+            pemilihan alat hingga teknik dasar.
           </p>
           <div class="blog-meta">
             <span>5 Menit Baca</span>
             <span>1 Nov 2025</span>
           </div>
         </div>
-      </div>
+      </router-link>
 
-      <div class="blog-card">
+      <!-- Blog 2 -->
+      <router-link to="/blog/spot-mancing-jabar" class="blog-card">
         <div class="blog-image">
           <img
-            src="https://source.unsplash.com/800x600/?lake,fishing"
-            alt="Spot Favorit"
-          />
+            src="https://www.kabarmancing.com/wp-content/uploads/2014/05/114.jpg" alt="Spot Favorit"/>
         </div>
         <div class="blog-content">
           <h3>5 Spot Mancing Favorit di Jawa Barat</h3>
@@ -40,14 +38,13 @@
             <span>30 Okt 2025</span>
           </div>
         </div>
-      </div>
+      </router-link>
 
-      <div class="blog-card">
+      <!-- Blog 3 -->
+      <router-link to="/blog/umpan-jitu-ikan-mas" class="blog-card">
         <div class="blog-image">
           <img
-            src="https://source.unsplash.com/800x600/?bait,fishing"
-            alt="Umpan Terbaik"
-          />
+            src="https://id-test-11.slatic.net/p/cbf927cf066519fa7e64f5fe04d334a4.jpg"alt="Umpan Terbaik"/>
         </div>
         <div class="blog-content">
           <h3>Rahasia Umpan Jitu untuk Ikan Mas</h3>
@@ -60,7 +57,7 @@
             <span>28 Okt 2025</span>
           </div>
         </div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>

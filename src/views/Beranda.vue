@@ -3,11 +3,13 @@
     <ImageSlider />
     <HeroContent />
   </main>
+  <BlogSection />
 </template>
 
 <script setup>
 import ImageSlider from "@/components/ImageSlider.vue";
 import HeroContent from "@/components/HeroContent.vue";
+import BlogSection from '@/components/BlogSection.vue';
 </script>
 
 <style scoped>

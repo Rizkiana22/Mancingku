@@ -55,6 +55,7 @@ const filteredSpots = computed(() => {
 .spot-page {
   padding: 2rem 4vw;
   background: #fff;
+  min-height: 100vh;
 }
 
 .search-section h1 {
@@ -68,5 +69,9 @@ const filteredSpots = computed(() => {
   flex-direction: column;
   gap: 1.5rem;
   margin-top: 1rem;
+}
+
+@media (max-width: 768px){
+
 }
 </style>

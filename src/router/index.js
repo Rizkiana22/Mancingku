@@ -8,6 +8,9 @@ import Signin from '@/views/signIn.vue'
 import signUp from '@/views/signUp.vue'
 import Profile from '@/views/Profile.vue'
 import DetailSpot from '@/views/DetailSpot.vue'
+import BookingPage  from '@/views/BookingPage.vue'
+import BlogDetail from '@/views/BlogDetail.vue'
+import PaymentPage from '@/views/PaymentPage.vue'
 
 const routes = [
   { path: '/', name: 'Beranda', component: Beranda },
@@ -16,14 +19,22 @@ const routes = [
   { path: '/peralatan', name: 'Peralatan', component: Peralatan },
   { path: '/umpan', name: 'Umpan', component: Umpan },
   { path: '/spot/:id', name: 'DetailSpot', component: () => import('../views/DetailSpot.vue') },
+  { path: '/comment/:id', name: 'CommentPage', component: () => import('@/views/CommentPage.vue')},
   { path: '/signIn', name: 'signIn', component: Signin },
   { path: '/signUp', name: 'signUp', component: signUp },
   { path: '/Profile', name: 'Profile', component: Profile },
+  { path: '/BookingPage/:id', name: 'BookingPage', component: BookingPage },
+  { path: '/blog/:slug', name: 'BlogDetail', component: BlogDetail },
+  { path: '/payment/:Id', name: 'PaymentPage', component: () => import('@/views/PaymentPage.vue') },
 ]
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior() {
+    // selalu scroll ke atas tiap ganti halaman
+    return { top: 0 }
+  }
 })
 
 export default router
