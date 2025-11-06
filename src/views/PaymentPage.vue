@@ -2,6 +2,12 @@
   <div class="payment-page">
     <h2 class="title">Pembayaran Tiket Mancing</h2>
 
+    <div class="btn-back">
+  <router-link :to="`/bookingpage/${route.params.id}`">
+    <button>←</button>
+  </router-link>
+</div>
+
     <div class="payment-container">
       <!-- Metode Pembayaran -->
       <div class="payment-methods">
@@ -28,8 +34,10 @@
           <div>
             <p>Subtotal Pesanan</p>
             <small>Durasi: {{ durasi }} jam</small><br />
-            <small>Nama: {{ nama }}</small><br />
-            <small>Tanggal: {{ tanggal }}</small><br />
+            <small>Nama: {{ nama }}</small
+            ><br />
+            <small>Tanggal: {{ tanggal }}</small
+            ><br />
             <small>Jam Mulai: {{ jamMulai }}</small>
           </div>
           <span>Rp{{ formatNumber(subtotal) }}</span>
@@ -50,57 +58,200 @@
         </button>
       </div>
     </div>
+
+    <div v-if="showQRISModal" class="modal-overlay" @click.self="closeModal">
+      <div class="QRIS-content">
+        <h3>Pembayaran</h3>
+
+        <img
+          src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=Mancingku-QRIS-Dummy"
+          alt="QRIS"
+          class="qris-image"
+        />
+        <p>
+          Scan QR Ini untuk Pembayaran<strong
+            >Rp {{ formatNumber(total) }}</strong
+          >
+        </p>
+          <button class="btn-close" @click="closeModal">Kembali</button>
+      </div>
+    </div>
+
+    <div v-if="showBCAModal" class="modal-overlay" @click.self="closeModal">
+      <div class="BCA-content">
+        <h3>Pembayaran Melalui BCA</h3>
+        <P>Total Pembayaran:</P>
+        <h3>Rp {{ formatNumber(total) }}</h3>
+
+        <div class="va-box">
+          <p>Nomor Virtual Account:</p>
+          <h3>827308912389123</h3>
+
+          <p class="info">
+            Silahkan transfer ke nomor VA di atas melalui:
+            <br />
+            <b>BCA Mobile / MY BCA / ATM BCA</b>
+          </p>
+          <button class="btn-close" @click="closeModal">Kembali</button>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="showMandiriModal" class="modal-overlay" @click.self="closeModal">
+      <div class="Mandiri-content">
+        <h3>Pembayaran Melalui Mandiri</h3>
+        <P>Total Pembayaran:</P>
+        <h3>Rp {{ formatNumber(total) }}</h3>
+
+        <div class="va-box">
+          <p>Nomor Virtual Account:</p>
+          <h3>827308912389123</h3>
+
+          <p class="info">
+            Silahkan transfer ke nomor VA di atas melalui:
+            <br />
+            <b>Livin By Mandiri / ATM Mandiri</b>
+          </p>
+          <button class="btn-close" @click="closeModal">Kembali</button>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="showDanaModal" class="modal-overlay" @click.self="closeModal">
+      <div class="Dana-content">
+        <h3>Pembayaran Melalui Dana</h3>
+        <P>Total Pembayaran:</P>
+        <h3>Rp {{ formatNumber(total) }}</h3>
+
+        <div class="No-box">
+          <p>Nomor Dana:</p>
+          <h3>0821313213</h3>
+
+          <p class="info">
+            Silahkan transfer ke nomor DANA di atas melalui:
+            <br />
+            <b>E - Wallet kesayangan</b>
+          </p>
+          <button class="btn-close" @click="closeModal">Kembali</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue"
-import { useRoute, useRouter } from "vue-router"
+import { ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
-const route = useRoute()
-const router = useRouter()
+const route = useRoute();
+const router = useRouter();
 
 // Ambil data dari query
-const nama = route.query.nama || "-"
-const tanggal = route.query.tanggal || "-"
-const jamMulai = route.query.jamMulai || "-"
-const durasi = route.query.durasi || "1"
+const nama = route.query.nama || "-";
+const tanggal = route.query.tanggal || "-";
+const jamMulai = route.query.jamMulai || "-";
+const durasi = route.query.durasi || "1";
+const jumlahOrang = route.query.jumlahOrang || "1";
 
 // Hitung total
-const hargaPerJam = 20000
-const subtotal = hargaPerJam * Number(durasi)
-const pajak = 2500
-const total = subtotal + pajak
+const hargaPerJam = 20000;
+const subtotal = hargaPerJam * Number(durasi) * Number(jumlahOrang);
+const pajak = 2500;
+const total = subtotal + pajak;
 
 // Metode pembayaran
 const methods = [
-  { name: "QRIS", logo: "https://tse1.mm.bing.net/th/id/OIP.SJk3_1NbGUAvZ-bJslHM4wHaC0?pid=Api&P=0&h=180" },
-  { name: "BCA", logo: "https://tse2.mm.bing.net/th/id/OIP.SIiH0GXVJKMQl0Lary6_rQHaHa?pid=Api&P=0&h=180" },
-  { name: "Mandiri", logo: "https://tse4.mm.bing.net/th/id/OIP.L2HwHrcAI66hMbOuhvYH-wHaFj?pid=Api&P=0&h=180" },
-  { name: "Dana", logo: "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,f_auto,q_auto:best,w_640/v1634025439/01gmcdxz8g143r0r2kebz7gpsf.jpg" },
-]
+  {
+    name: "QRIS",
+    logo: "https://tse1.mm.bing.net/th/id/OIP.SJk3_1NbGUAvZ-bJslHM4wHaC0?pid=Api&P=0&h=180",
+  },
+  {
+    name: "BCA",
+    logo: "https://tse2.mm.bing.net/th/id/OIP.SIiH0GXVJKMQl0Lary6_rQHaHa?pid=Api&P=0&h=180",
+  },
+  {
+    name: "Mandiri",
+    logo: "https://tse4.mm.bing.net/th/id/OIP.L2HwHrcAI66hMbOuhvYH-wHaFj?pid=Api&P=0&h=180",
+  },
+  {
+    name: "Dana",
+    logo: "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,f_auto,q_auto:best,w_640/v1634025439/01gmcdxz8g143r0r2kebz7gpsf.jpg",
+  },
+];
 
-const selectedMethod = ref(null)
+const selectedMethod = ref(null);
+const showQRISModal = ref(false);
+const showBCAModal = ref(false);
+const showMandiriModal = ref(false);
+const showDanaModal = ref(false);
 
 const selectMethod = (method) => {
-  selectedMethod.value = method
-}
+  selectedMethod.value = method;
+};
 
 const lanjutkanPembayaran = () => {
   if (!selectedMethod.value) {
-    alert("Silakan pilih metode pembayaran terlebih dahulu!")
-    return
+    alert("Silakan pilih metode pembayaran terlebih dahulu!");
+    return;
   }
 
-  alert(`✅ Pembayaran berhasil melalui ${selectedMethod.value}!`)
-  router.push("/") // redirect ke halaman utama
+  if (selectedMethod.value === "QRIS") {
+    showQRISModal.value = true;
+    return;
+  }
+
+  if (selectedMethod.value === "BCA") {
+    showBCAModal.value = true;
+    return;
+  }
+
+  if (selectedMethod.value === "Mandiri") {
+    showMandiriModal.value = true;
+    return;
+  }
+
+  if (selectedMethod.value === "Dana") {
+    showDanaModal.value = true;
+    return;    
+  }
+
+
+  alert(`✅ Pembayaran berhasil melalui ${selectedMethod.value}!`);
+  router.push("/"); // redirect ke halaman utama
+};
+
+const closeModal = () => {
+  showQRISModal.value = false
+  showBCAModal.value = false
+  showMandiriModal.value = false
+  showDanaModal.value = false
 }
 
+
 // Format angka ribuan
-const formatNumber = (num) => num.toLocaleString("id-ID")
+const formatNumber = (num) => num.toLocaleString("id-ID");
 </script>
 
 <style scoped>
+
+.btn-back{
+  position: absolute;
+  top:60px;
+  left:45vh;
+
+}
+
+.btn-back button{
+  background: transparent;
+  color:#fff;
+  border: none;
+  font-size: 50px;
+  
+}
+
+.btn-back button:hover{
+  color: #f79e1b; 
+}
 .payment-page {
   display: flex;
   flex-direction: column;
@@ -219,6 +370,166 @@ const formatNumber = (num) => num.toLocaleString("id-ID")
   background: #e38c00;
 }
 
+/*TOMBOL CLOSE */
+.btn-close {
+  background: #e57200;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-close:hover {
+  background: #c55c00;
+}
+
+
+/*QRIS*/
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.QRIS-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.qris-image {
+  margin: 15px 0;
+  width: 200px;
+  height: 200px;
+}
+
+/*BCA*/
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.BCA-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.va-box {
+  background: #f1f1f1;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.info {
+  font-size: 14px;
+  color: #444;
+  margin-top: 8px;
+}
+
+/*MANDIRI */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.Mandiri-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.va-box {
+  background: #f1f1f1;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.info {
+  font-size: 14px;
+  color: #444;
+  margin-top: 8px;
+}
+
+
+/*DANA */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.Dana-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.No-box {
+  background: #f1f1f1;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.info {
+  font-size: 14px;
+  color: #444;
+  margin-top: 8px;
+}
 /* === Responsif untuk mobile === */
 @media (max-width: 768px) {
   .payment-container {

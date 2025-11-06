@@ -13,6 +13,7 @@
 
 <script>
 import Navbar from "@/components/Navbar.vue";
+import "@/assets/blog.css";
 
 // Import artikel lain disini
 import TipsMancingPemula from "@/components/Blog/TipsMancingPemula.vue";

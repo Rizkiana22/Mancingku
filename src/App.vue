@@ -1,13 +1,23 @@
 <template>
-  
   <div id="app">
-    <Navbar />       <!-- Navbar global -->
-    <router-view />  <!-- Halaman spesifik muncul di sini -->
+    <!-- Navbar hanya muncul kalau bukan di halaman payment -->
+    <Navbar v-if="!hideNavbar" />
+    <router-view />
   </div>
 </template>
 
 <script setup>
 import Navbar from './components/Navbar.vue'
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
+
+// Akses route aktif
+const route = useRoute()
+
+// untuk halaman payment navbar di hide
+const hideNavbar = computed(() => {
+  return route.path.includes('/payment')
+})
 </script>
 
 <style>

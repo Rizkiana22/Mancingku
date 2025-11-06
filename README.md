@@ -1,6 +1,25 @@
 # mancingku
 
-This template should help get you started developing with Vue 3 in Vite.
+**Mancingku** adalah aplikasi web berbasis Vue.js yang memudahkan pengguna untuk mencari spot pemancingan, memesan tiket, dan melihat berbagai macam peralatan serta umpan pancing. Aplikasi ini ditujukan bagi pemancing pemula hingga profesional yang ingin mempermudah aktivitas memancing secara online.
+
+## Fitur Utama
+
+- **Beranda (Home)**: Menampilkan slider gambar dan konten hero tentang aplikasi.
+- **About**: Menjelaskan profil aplikasi dan fokus utama layanan.
+- **Cari Spot Pemancingan**:  
+  - Cari spot berdasarkan alamat.  
+  - Lihat detail spot, harga, kapasitas, dan rating.  
+- **Peralatan Pancing**: Menampilkan daftar alat pancing lengkap dengan deskripsi dan link pembelian.  
+- **Umpan Pancing**: Menampilkan berbagai jenis umpan beserta rekomendasi penggunaannya.  
+- **Booking Tiket**:  
+  - Pilih tanggal, jam mulai, durasi, dan jumlah orang.  
+  - Pilih opsi sewa alat pancing dengan harga per jam.  
+  - Hitung otomatis total biaya.  
+- **Pembayaran**:  
+  - Pilih metode pembayaran (QRIS, BCA, Mandiri, Dana).  
+  - Menampilkan rincian biaya, pajak, dan total pembayaran.  
+  - Modal QR dan nomor virtual account untuk pembayaran.  
+
 
 ## Recommended IDE Setup
 

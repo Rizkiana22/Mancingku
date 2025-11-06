@@ -11,14 +11,14 @@
 
     <img
       class="cover-img"
-      src="https://id-test-11.slatic.net/p/cbf927cf066519fa7e64f5fe04d334a4.jpg"
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMfJJVmFNl8XjDF5AmWcBIDVw1YNUXfosS5Ngpf3zWZcoIjbWNTgD1xrZoUybc31SUyQXo0ecRV2CcTHNXJ7XkxlZVZeQAqwSfdsKHK4DiYmhLd61G0yY9_5CCUakRQlwtmI9sUuKuZuU/s1600/1.jpg"
       alt="Umpan Ikan Mas"
     />
 
     <div class="blog-content">
       <p>
         Ikan mas adalah salah satu ikan paling populer di kolam pemancingan Jawa Barat.
-        Tapi jangan salah—walaupun terlihat jinak, ikan mas punya karakter unik:
+        Tapi jangan salah, walaupun terlihat jinak, ikan mas punya karakter unik:
         <strong>sensitif bau</strong>, <strong>memilih tekstur</strong>, dan sangat dipengaruhi suhu air. 
         Itulah kenapa banyak pemancing bilang:
       </p>
@@ -33,13 +33,13 @@
       </p>
 
       <!-- Racikan 1 -->
-      <h2>1. Racikan Dasar Harian — Simple & Ampuh</h2>
+      <h2>1. Racikan Dasar Harian | Simple & Ampuh</h2>
       <p>Cocok buat pemula & kolam harian ikan mas.</p>
 
       <ul>
-        <li>Pelet PF 1000 — 2 sendok makan</li>
-        <li>Pelet Jitu — 1 bungkus kecil</li>
-        <li>Air hangat — 5–6 sendok makan</li>
+        <li>Pelet PF 1000: 2 sendok makan</li>
+        <li>Pelet Jitu: 1 bungkus kecil</li>
+        <li>Air hangat: 5–6 sendok makan</li>
         <li>1 Sdt susu bubuk</li>
         <li>1 sdt essen vanilla / pandan</li>
       </ul>
@@ -52,27 +52,27 @@
       <p><em>Kenapa works?</em> Aroma susu + vanilla bikin ikan cepat naik & agresif.</p>
 
       <!-- Racikan 2 -->
-      <h2>2. Racikan Aroma Wangi Lembut — Kondisi Air Jernih</h2>
+      <h2>2. Racikan Aroma Wangi Lembut : Kondisi Air Jernih</h2>
 
       <ul>
-        <li>Bom ayam (putih) — 2 sendok makan</li>
-        <li>Susu bayi (SGM/Frisian) — 1 sendok makan</li>
-        <li>Vanili bubuk — sejumput</li>
-        <li>Kroto — 1 genggam kecil (opsional)</li>
+        <li>Bom ayam (putih): 2 sendok makan</li>
+        <li>Susu bayi (SGM/Frisian): 1 sendok makan</li>
+        <li>Vanili bubuk: sejumput</li>
+        <li>Kroto: 1 genggam kecil (opsional)</li>
         <li>Air secukupnya</li>
       </ul>
 
       <p><strong>Tips:</strong> Jangan terlalu wangi. Wangi soft = natural = ikan gak curiga.</p>
 
       <!-- Racikan 3 -->
-      <h2>3. Racikan Galatama Ikan Mas — Tarikan Monster</h2>
+      <h2>3. Racikan Galatama Ikan Mas: Tarikan Monster</h2>
       <p>Untuk lomba, daya tarik harus kuat & cepat.</p>
 
       <ul>
-        <li>Pelet Oris — 2 sendok makan</li>
-        <li>Kroto segar — 2 sendok makan</li>
+        <li>Pelet Oris: 2 sendok makan</li>
+        <li>Kroto segar: 2 sendok makan</li>
         <li>1 butir telur bebek rebus (ambil kuningnya saja)</li>
-        <li>Essence almond + nangka — 3 tetes masing-masing</li>
+        <li>Essence almond + nangka: 3 tetes masing-masing</li>
         <li>Air es sedikit saja</li>
       </ul>
 
@@ -86,10 +86,10 @@
       <p>Kalau cuaca dingin biasanya ikan mas males makan → umpan harus lebih soft & gurih.</p>
 
       <ul>
-        <li>Pelet 48 — 2 sendok makan</li>
-        <li>Tepung roti — 1 sendok</li>
-        <li>Santan bubuk — sedikit</li>
-        <li>Essen durian / nangka — 2 tetes</li>
+        <li>Pelet 48: 2 sendok makan</li>
+        <li>Tepung roti: 1 sendok</li>
+        <li>Santan bubuk: sedikit</li>
+        <li>Essen durian / nangka: 2 tetes</li>
       </ul>
 
       <p>Tekstur agak halus, aroma gurih manis → bikin ikan mau makan walau dingin.</p>
@@ -114,79 +114,11 @@
       </ul>
 
       <blockquote>
-        “Umpan bagus itu sederhana, lembut, dan aromanya pas — bukan yang paling banyak bahan.”
+        “Umpan bagus itu sederhana, lembut, dan aromanya pas, bukan yang paling banyak bahan.”
       </blockquote>
 
-      <p><strong>Selamat mencoba — semoga langsung disamber babon pertama kamu! 🎣🐟🔥</strong></p>
+      <p><strong>Selamat mencoba! semoga langsung disamber babon pertama kamu! 🎣🐟🔥</strong></p>
     </div>
 
   </article>
 </template>
-
-<style scoped>
-.blog-article {
-  max-width: 920px;
-  margin: auto;
-  padding: 2rem 1.5rem;
-}
-
-.blog-title {
-  font-size: 34px;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: .5rem;
-  color: #0b2b3c;
-}
-
-.meta {
-  color: #777;
-  font-size: 14px;
-  margin-bottom: 1.2rem;
-}
-
-.cover-img {
-  width: 80%;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-}
-
-.blog-content {
-  font-size: 18px;
-  line-height: 1.75;
-  color: #222;
-}
-
-.blog-content h2 {
-  font-size: 22px;
-  margin-top: 1.6rem;
-  margin-bottom: .5rem;
-  color: #004160;
-  font-weight: 600;
-}
-
-ul {
-  margin-left: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-hr {
-  border: 0;
-  border-top: 1px solid #ddd;
-  margin: 2rem 0;
-}
-
-blockquote {
-  margin: 1.5rem 0;
-  padding: .8rem 1rem;
-  background: #f1f8ff;
-  border-left: 4px solid #0077c2;
-  font-style: italic;
-  color: #003353;
-  border-radius: 4px;
-}
-
-@media(max-width: 768px) {
-  .blog-title { font-size: 26px; }
-  .blog-content { font-size: 17px; }
-}
-</style>

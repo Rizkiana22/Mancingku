@@ -28,7 +28,7 @@
 
       <p>
         Bagi pemula, memulai hobi memancing sering kali terasa membingungkan.
-        Tenang—panduan ini akan membantu kamu memahami dasar-dasarnya
+        Tenang, panduan ini akan membantu kamu memahami dasar-dasarnya
         agar siap turun ke spot dan dapat ikan pertamamu!
       </p>
 
@@ -39,9 +39,9 @@
         karena tekniknya lebih kompleks.
       </p>
       <ul>
-        <li>Kolam harian — pilihan terbaik untuk belajar</li>
-        <li>Danau tenang — suasana alam lebih mantap</li>
-        <li>Datang saat pagi atau sore — jam makan ikan terbaik</li>
+        <li>Kolam harian: pilihan terbaik untuk belajar</li>
+        <li>Danau tenang: suasana alam lebih mantap</li>
+        <li>Datang saat pagi atau sore: jam makan ikan terbaik</li>
       </ul>
 
       <h2>2. Gunakan Peralatan Sederhana</h2>
@@ -61,9 +61,9 @@
         Umpan hidup adalah pilihan paling aman untuk pemula.
       </p>
       <ul>
-        <li><strong>Cacing tanah</strong> — paling universal</li>
-        <li><strong>Kroto</strong> — favorit ikan mas</li>
-        <li><strong>Pelet</strong> — praktis dan mudah dipakai</li>
+        <li><strong>Cacing tanah</strong>: paling universal</li>
+        <li><strong>Kroto</strong>: favorit ikan mas</li>
+        <li><strong>Pelet</strong>: praktis dan mudah dipakai</li>
       </ul>
 
       <h2>4. Kuasai Teknik Dasar</h2>
@@ -88,71 +88,3 @@
     </div>
   </article>
 </template>
-
-<style scoped>
-.blog-article {
-  max-width: 920px;
-  margin: auto;
-  padding: 2rem 1.5rem;
-}
-
-.blog-title {
-  font-size: 34px;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: .5rem;
-  color: #0b2b3c;
-}
-
-.meta {
-  color: #777;
-  font-size: 14px;
-  margin-bottom: 1.2rem;
-}
-
-.cover-img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-}
-
-.blog-content {
-  font-size: 18px;
-  line-height: 1.75;
-  color: #222;
-}
-
-.blog-content h2 {
-  font-size: 24px;
-  margin-top: 1.8rem;
-  margin-bottom: .6rem;
-  color: #004160;
-  font-weight: 600;
-}
-
-.blog-content ul,
-.blog-content ol {
-  margin-left: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-blockquote {
-  margin: 1.5rem 0;
-  padding: .8rem 1rem;
-  background: #f1f8ff;
-  border-left: 4px solid #0077c2;
-  font-style: italic;
-  color: #003353;
-  border-radius: 4px;
-}
-
-/* Mobile */
-@media(max-width: 768px) {
-  .blog-title {
-    font-size: 26px;
-  }
-  .blog-content {
-    font-size: 17px;
-  }
-}
-</style>

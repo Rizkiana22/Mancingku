@@ -23,11 +23,13 @@ const loading = ref(true)
 const dummyData = [
   {
     id: 1,
+    slug: "saung-kemangi",
     nama: "Saung Kemangi",
     alamat: "Jl. Cipaku Indah X No.2, Ledeng, Bandung",
     rating: 4.5,
     harga: 20000,
     jam_operasional: "10.00 - 22.00",
+    capacity: 20,
     image: "https://i.pinimg.com/736x/8f/8d/14/8f8d1477e57e783872b809c5447b5280.jpg",
     galeri: [
       "https://i.pinimg.com/1200x/36/31/25/363125df0f728983311938f7b1f1d01a.jpg",
@@ -49,27 +51,35 @@ const dummyData = [
   },
   {
     id: 2,
+    slug: "situ-ciburuy",
     nama: "Situ Ciburuy",
     alamat: "Padalarang, Kabupaten Bandung Barat",
     rating: 4.2,
     harga: 15000,
     jam_operasional: "08.00 - 20.00",
+    capacity: 25,
     image: "https://i.pinimg.com/736x/a6/cd/3a/a6cd3a2a8194fedce2c8c2c54c11140a.jpg",
     galeri: [
       "https://i.pinimg.com/736x/84/51/5d/84515d6f22e81fa4942647f8610c7456.jpg",
       "https://i.pinimg.com/736x/30/28/9c/30289c1a9ea3c6dc05f260c6e10ceb7b.jpg",
       "https://i.pinimg.com/736x/97/a8/bf/97a8bf62226bc443b18762b0e3452cee.jpg"
     ],
-    fasilitas: ["Tempat Istirahat", "Toilet", "Parkir"],
+    fasilitas: [
+      { nama: "Toilet", icon: "https://cdn-icons-png.flaticon.com/128/185/185547.png" },
+      { nama: "Sewa Alat", icon: "https://cdn-icons-png.flaticon.com/128/2265/2265049.png" },
+      { nama: "Parkir", icon: "https://cdn-icons-png.flaticon.com/128/15767/15767705.png" }
+    ],
     ulasan: []
   }
 ]
 
 onMounted(() => {
-  const id = parseInt(route.params.id)
-  const found = dummyData.find(s => s.id === id)
+  const slug = route.params.slug
+  const found = dummyData.find(s => s.slug === slug)
+
   if (found) {
     spot.value = found
+    document.title = `${found.nama} | Mancingku`
   } else {
     spot.value = { nama: "Spot tidak ditemukan" }
   }

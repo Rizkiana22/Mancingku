@@ -4,8 +4,8 @@
     <div v-else>
       <div class="nama-tempat">
           <center><h2>{{ spot.nama }}</h2></center>
-          <center><p>kesan pengunjung</p></center>
-          <router-link :to="`/spot/${spot.id}`" class="btn-back">
+          <center><p>Ulasan Pengunjung</p></center>
+          <router-link :to="`/spot/${spot.slug}`" class="btn-back">
              ←       
           </router-link>
       </div>
@@ -42,6 +42,7 @@ const loading = ref(true)
 const dummyData = [
   {
     id: 1,
+    slug: "saung-kemangi",
     nama: "Saung Kemangi",
     ulasan: [
       { id: 1, user: "U***", komentar: "Tempat nyaman dan tenang", stars: "4.5" },
@@ -68,6 +69,7 @@ const dummyData = [
   },
   {
     id: 2,
+    slug: "situ-ciburuy",
     nama: "Situ Ciburuy",
     ulasan: []
   }

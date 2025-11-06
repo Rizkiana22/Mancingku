@@ -10,15 +10,15 @@
         <span>{{ spot.rating }}</span>
         <span class="stars">⭐️⭐️⭐️⭐️⭐️</span>
       </div>
-
+      <p><strong>Kapasitas:</strong> {{ spot.capacity }} kursi</p>
       <p class="availability">Tersisa {{ spot.remaining }} kursi!</p>
     </div>
 
     <div class="spot-price">
       <p>{{ spot.price }}</p>
 
-      <router-link :to="`/spot/${spot.id}`" class="btn-pilih">
-        Pilih
+      <router-link :to="`/spot/${spot.slug}`" class="btn-pilih">
+      Pilih
       </router-link>
     </div>
   </div>
@@ -74,4 +74,5 @@ defineProps({
 .btn-pilih:hover {
   background: #b45309;
 }
+
 </style>

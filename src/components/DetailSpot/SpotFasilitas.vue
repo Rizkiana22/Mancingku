@@ -13,8 +13,10 @@
     <div class="right">
       <h4>JAM OPERASIONAL :</h4>
       <p>{{ spot.jam_operasional }}</p>
-      <div class="harga">
-        <p>harga per jam<br><b>Rp {{ spot.harga.toLocaleString() }}</b></p>
+      <div class="harga-button-group">
+        <div class="harga-info">
+          <p>harga per jam<br><b>Rp {{ spot.harga.toLocaleString() }}</b></p>
+        </div>
         <router-link :to="`/bookingpage/${spot.id}`" class="btn-pesan">Pesan Sekarang</router-link>
       </div>
       <p class="kursi">Tersisa 5 kursi!</p>
@@ -75,32 +77,30 @@ defineProps({
 
 /* Kolom kanan */
 .right {
-  margin-top: 5px;
-  flex: 1;
-  text-align:left;
-  transform: translateX(-5px);
+  flex: 0.6;
+  text-align: left;
 }
 
 .right h4 {
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   font-weight: 600;
-  
+  font-size: 18px;
 }
 
 .right p {
-  margin: 4px 0;
+  margin: 5px 0;
   color: white;
+  font-size: 16px;
 }
 
-.harga {
-  margin-top: 50px;
+.harga-button-group {
   display: flex;
   align-items: center;
-  justify-content:center;
-  gap: 10px;
+  gap: 30px;
+  margin-top: 10px;
 }
 
-.harga b {
+.harga-info b {
   color: #ffcc00;
 }
 
@@ -114,7 +114,6 @@ defineProps({
   border-radius: 10px;
   border: none;
   cursor: pointer;
-
 }
 
 .btn-pesan:hover {
@@ -124,13 +123,13 @@ defineProps({
 .right .kursi{
   color: #e57200;
 }
+
 .kursi {
-  display: flex;
-  align-items: center;
-  justify-content:right;
-  transform: translateX(-100px);
+  margin-top: 8px;
   font-size: 15px;
-  
+  text-align: right;
+  width: fit-content;
+  margin-left: auto;
 }
 
 /* Responsif */
@@ -240,7 +239,6 @@ defineProps({
   justify-content:right;
   transform: translateX(-10px);
   font-size: 15px;
-  
 }
 
 }
