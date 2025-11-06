@@ -11,7 +11,7 @@ import DetailSpot from '@/views/DetailSpot.vue'
 import BookingPage  from '@/views/BookingPage.vue'
 import BlogDetail from '@/views/BlogDetail.vue'
 import PaymentPage from '@/views/PaymentPage.vue'
-
+import AddReview from '@/views/AddReview.vue'
 const routes = [
   { path: '/', name: 'Beranda', component: Beranda },
   { path: '/tentang', name: 'Tentang', component: Tentang, meta: { title: 'Tentang | Mancingku' } },
@@ -26,6 +26,7 @@ const routes = [
   { path: '/BookingPage/:id', name: 'BookingPage', component: BookingPage, meta: { title: 'Booking | Mancingku' } },
   { path: '/blog/:slug', name: 'BlogDetail', component: BlogDetail, meta: { title: 'Artikel | Mancingku' } },
   { path: '/payment/:Id', name: 'PaymentPage', component: () => import('@/views/PaymentPage.vue'), meta: { title: 'Pembayaran | Mancingku' } },
+{ path: '/comment/add/:id', name: 'AddReview', component: AddReview, meta: { title: 'Tambah Ulasan | Mancingku' }},
 ]
 
 const router = createRouter({

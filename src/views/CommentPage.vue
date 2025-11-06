@@ -10,6 +10,14 @@
           </router-link>
       </div>
 
+      <div class="add-comment">
+  <router-link :to="`/comment/add/${spot.id}`" class="btn-tambah">
+  Tambah Komentar
+</router-link>
+
+      </div>
+
+
       <div v-if="spot.ulasan && spot.ulasan.length">
         <div
           v-for="review in spot.ulasan"
@@ -150,7 +158,30 @@ display: flex;
 color: #005fa3;
 }
 
+.add-comment {
+  text-align: right; /* posisi tombol di kanan */
+  margin: 1rem 0;
+}
 
+/* tombolnya */
+.btn-tambah {
+  display: inline-block;
+  background-color: #da9723;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+}
+
+.btn-tambah:hover {
+  background-color: #e28e00;
+}
 @media (max-width : 768px){
   .btn-back {
   position: absolute;     /* supaya bisa ditempatkan bebas di area nama-tempat */
@@ -161,6 +192,21 @@ color: #005fa3;
   text-decoration: none;
   transition: color 0.2s, transform 0.2s;
   line-height: 1;
+}
+
+.btn-tambah {
+  display: inline-block;
+  background-color: #da9723;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2);
 }
 }
 </style>
