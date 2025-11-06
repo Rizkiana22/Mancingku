@@ -53,14 +53,33 @@ Menampilkan informasi lengkap spot memancing, termasuk:
   - Barcode tiket
 
 ## Screenshot / Preview
+### Beranda dan Spot
+<img width="1904" height="915" alt="image" src="https://github.com/user-attachments/assets/5736c1fd-2df3-42da-b02c-dd99de695781" />
 
-### Beranda
+<img width="1903" height="913" alt="image" src="https://github.com/user-attachments/assets/397a66ba-ed02-4879-a8ed-73bc78f6e777" />
 
 
-### Cari Spot Pemancingan
+### Tentang
+<img width="1900" height="913" alt="image" src="https://github.com/user-attachments/assets/e8922963-dea5-4cda-9fa5-87b19b4e1e7e" />
 
 
-### Booking & Payment
+### Pencarian spot dan detail spot
+<img width="1905" height="918" alt="image" src="https://github.com/user-attachments/assets/c06330ed-6d46-41ec-b65e-7a5ef3ebe34f" />
+
+<img width="1918" height="915" alt="image" src="https://github.com/user-attachments/assets/1441c468-5b28-4015-bd95-31b24b07813b" />
+
+### Booking dan payment
+<img width="1919" height="912" alt="image" src="https://github.com/user-attachments/assets/69b351f8-d29b-452d-be6a-3c08adaebf3d" />
+
+<img width="1898" height="912" alt="image" src="https://github.com/user-attachments/assets/adaa0319-3c5d-4bea-ba4b-c0dcc6dbca5c" />
+
+### Peralatan dan Umpan
+<img width="1919" height="911" alt="image" src="https://github.com/user-attachments/assets/a2dc7d84-3b98-4f66-9fcc-ac351865b8fe" />
+
+### Profil dan Tiket
+<img width="1901" height="912" alt="image" src="https://github.com/user-attachments/assets/0f4e9f35-cecc-4911-b06f-251568c6ed0e" />
+
+<img width="1899" height="915" alt="image" src="https://github.com/user-attachments/assets/af39a380-643d-4821-8c4b-d8ed0eb5d61f" />
 
 
 ## Recommended IDE Setup
