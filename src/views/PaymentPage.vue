@@ -74,10 +74,10 @@ const total = subtotal + pajak
 
 // Metode pembayaran
 const methods = [
-  { name: "QRIS", logo: "/img/qris.png" },
-  { name: "BCA", logo: "/img/bca.png" },
-  { name: "Mandiri", logo: "/img/mandiri.png" },
-  { name: "Dana", logo: "/img/dana.png" },
+  { name: "QRIS", logo: "https://tse1.mm.bing.net/th/id/OIP.SJk3_1NbGUAvZ-bJslHM4wHaC0?pid=Api&P=0&h=180" },
+  { name: "BCA", logo: "https://tse2.mm.bing.net/th/id/OIP.SIiH0GXVJKMQl0Lary6_rQHaHa?pid=Api&P=0&h=180" },
+  { name: "Mandiri", logo: "https://tse4.mm.bing.net/th/id/OIP.L2HwHrcAI66hMbOuhvYH-wHaFj?pid=Api&P=0&h=180" },
+  { name: "Dana", logo: "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,f_auto,q_auto:best,w_640/v1634025439/01gmcdxz8g143r0r2kebz7gpsf.jpg" },
 ]
 
 const selectedMethod = ref(null)

@@ -97,6 +97,7 @@
 </template>
 
 <script setup>
+import router from "@/router"
 import { ref, computed } from "vue"
 import { useRoute } from "vue-router"
 
@@ -176,9 +177,21 @@ const pesanTiket = () => {
     return
   }
 
+  router.push('/payment/id');
+
   alert(
     `✅ Pemesanan berhasil!\nNama: ${form.value.nama}\nTanggal: ${form.value.tanggal}\nJam: ${form.value.jamMulai}\nDurasi: ${form.value.durasi} jam\nJumlah Orang: ${form.value.jumlahOrang}\nTotal: Rp${totalBiaya.value.toLocaleString()}`
   )
+
+  router.push({
+    path: `/payment/${spotId.value}`,
+    query: {
+      nama: form.value.nama,
+      tanggal: form.value.tanggal,
+      jamMulai: form.value.jamMulai,
+      durasi: form.value.durasi
+    }
+  })
 }
 </script>
 
