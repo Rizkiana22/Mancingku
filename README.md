@@ -2,6 +2,12 @@
 
 **Mancingku** adalah aplikasi web berbasis Vue.js yang memudahkan pengguna untuk mencari spot pemancingan, memesan tiket, dan melihat berbagai macam peralatan serta umpan pancing. Aplikasi ini ditujukan bagi pemancing pemula hingga profesional yang ingin mempermudah aktivitas memancing secara online.
 
+## Kelompok 1
+1. **Dicka Fachrunaldo (2407846)**
+2. **Muhammad Rizkiana Pratama (2404421)**
+3. **Nadhif Arva Anargya (2404336)**
+4. **Shidqi Rasyad Firjatulah (2408156)**
+
 ## Fitur Utama
 
 ### Beranda (Home)
