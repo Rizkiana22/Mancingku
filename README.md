@@ -54,13 +54,13 @@ Menampilkan informasi lengkap spot memancing, termasuk:
 
 ## Screenshot / Preview
 ### Beranda dan Spot
-<img width="1904" height="915" alt="image" src="https://github.com/user-attachments/assets/5736c1fd-2df3-42da-b02c-dd99de695781" />
+<img width="1912" height="946" alt="image" src="https://github.com/user-attachments/assets/56f7f37b-364a-42b3-9362-298acff077d7" />
 
-<img width="1903" height="913" alt="image" src="https://github.com/user-attachments/assets/397a66ba-ed02-4879-a8ed-73bc78f6e777" />
+<img width="1918" height="944" alt="image" src="https://github.com/user-attachments/assets/8836ff16-06e9-4198-91e7-35f16880a897" />
 
 
 ### Tentang
-<img width="1900" height="913" alt="image" src="https://github.com/user-attachments/assets/e8922963-dea5-4cda-9fa5-87b19b4e1e7e" />
+<img width="1919" height="948" alt="image" src="https://github.com/user-attachments/assets/4da1c6f6-de32-4d9f-9e19-059b196ce846" />
 
 
 ### Pencarian spot dan detail spot
