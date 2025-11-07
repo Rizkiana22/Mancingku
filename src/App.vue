@@ -30,4 +30,8 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+html, body{
+  width: 100%;
+  overflow-x: hidden;
+}
 </style>
