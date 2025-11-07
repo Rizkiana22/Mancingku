@@ -69,9 +69,10 @@ Menampilkan informasi lengkap spot memancing, termasuk:
 <img width="1918" height="915" alt="image" src="https://github.com/user-attachments/assets/1441c468-5b28-4015-bd95-31b24b07813b" />
 
 ### Booking dan payment
-<img width="1919" height="912" alt="image" src="https://github.com/user-attachments/assets/69b351f8-d29b-452d-be6a-3c08adaebf3d" />
+<img width="1916" height="929" alt="image" src="https://github.com/user-attachments/assets/0efd8286-36a7-4d48-83f7-b38a940466df" />
 
-<img width="1898" height="912" alt="image" src="https://github.com/user-attachments/assets/adaa0319-3c5d-4bea-ba4b-c0dcc6dbca5c" />
+<img width="1911" height="946" alt="image" src="https://github.com/user-attachments/assets/fb2d8f1a-5e18-421f-b058-1fa261f8150a" />
+
 
 ### Peralatan dan Umpan
 <img width="1919" height="911" alt="image" src="https://github.com/user-attachments/assets/a2dc7d84-3b98-4f66-9fcc-ac351865b8fe" />
