@@ -75,4 +75,36 @@ defineProps({
   background: #b45309;
 }
 
+@media (max-width : 768px) {
+ 
+  .spot-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .spot-img {
+    width: 100%;
+    height: 180px;
+  }
+
+  .spot-price {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f3f3f3;
+  }
+
+  .btn-pilih {
+    position: relative;
+    right: 10px;
+    margin: 1.5px;
+    flex-shrink: 0;
+  }
+}
+
+
+
 </style>

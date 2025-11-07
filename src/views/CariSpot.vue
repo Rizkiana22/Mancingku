@@ -77,6 +77,6 @@ const filteredSpots = computed(() => {
 }
 
 @media (max-width: 768px){
-
+  
 }
 </style>

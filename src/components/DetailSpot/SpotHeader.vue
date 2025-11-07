@@ -188,6 +188,7 @@ a {
   }
 
   .main-image {
+    margin-left: 20px;
     width: 90%;
   }
 

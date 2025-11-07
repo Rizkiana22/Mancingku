@@ -65,6 +65,7 @@ const rating = ref(0)
 .search-bar {
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 10px;
   margin-bottom: 20px;
 }
@@ -217,4 +218,45 @@ const rating = ref(0)
   margin-right: auto;
 }
 
+@media (max-width: 768px) {
+  .search-row {
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .search-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap; 
+}
+
+.search-input {
+  flex: 1; 
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.filter-panel {
+  position: static; /* hilangkan absolute agar ikut layout */
+  width: 100%;
+  margin-top: 10px;
+}
+
+.filter-panel h3 {
+  text-align: center;
+}
+
+.price-range {
+  justify-content: center;
+}
+
+.star-range {
+  justify-content: center;
+}
+
+.btn-apply {
+  width: 100%;
+}
+}
 </style>
