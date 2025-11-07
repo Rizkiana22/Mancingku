@@ -15,6 +15,14 @@ import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import SpotHeader from '@/components/DetailSpot/SpotHeader.vue'
 import SpotFasilitas from '@/components/DetailSpot/SpotFasilitas.vue'
+import spot1 from '@/assets/spot/Spot1-Main.jpeg'
+import spot1g1 from '@/assets/spot/Spot1-Galeri1.jpeg'
+import spot1g2 from '@/assets/spot/Spot1-Galeri2.jpeg'
+import spot1g3 from '@/assets/spot/Spot1-Galeri3.jpeg'
+import spot2 from '@/assets/spot/Spot2-Main.jpeg'
+import spot2g1 from '@/assets/spot/Spot2-Galeri-1.jpeg'
+import spot2g2 from '@/assets/spot/Spot2-Galeri-2.jpeg'
+import spot2g3 from '@/assets/spot/Spot2-Galeri-3.jpg'
 
 const route = useRoute()
 const spot = ref({})
@@ -30,11 +38,11 @@ const dummyData = [
     harga: 20000,
     jam_operasional: "10.00 - 22.00",
     capacity: 20,
-    image: "https://i.pinimg.com/736x/8f/8d/14/8f8d1477e57e783872b809c5447b5280.jpg",
+    image: spot1,
     galeri: [
-      "https://i.pinimg.com/1200x/36/31/25/363125df0f728983311938f7b1f1d01a.jpg",
-      "https://i.pinimg.com/736x/dc/d1/4e/dcd14e3ca7cb0a819976077d46dfe5c0.jpg",
-      "https://i.pinimg.com/1200x/fa/c6/19/fac619f73c7119b7e561eb7765da0257.jpg"
+      spot1g1,
+      spot1g2,
+      spot1g3
     ],
     fasilitas: [
       { nama: "Tempat Istirahat", icon: "https://cdn-icons-png.flaticon.com/128/2881/2881924.png" },
@@ -46,7 +54,7 @@ const dummyData = [
     ],
     ulasan: [
       { id: 1, user: "U***", komentar: "Tempat nyaman dan tenang", stars: "4.5" },
-      { id: 2, user: "D***", komentar: "Kolam luas, cocok untuk keluarga", stars: "4.5" }
+      { id: 2, user: "D***", komentar: "Kolam luas, cocok untuk keluarga", stars: "4.5" },
     ]
   },
   {
@@ -54,22 +62,25 @@ const dummyData = [
     slug: "situ-ciburuy",
     nama: "Situ Ciburuy",
     alamat: "Padalarang, Kabupaten Bandung Barat",
-    rating: 4.2,
+    rating: 4.5,
     harga: 15000,
     jam_operasional: "08.00 - 20.00",
     capacity: 25,
-    image: "https://i.pinimg.com/736x/a6/cd/3a/a6cd3a2a8194fedce2c8c2c54c11140a.jpg",
+    image: spot2,
     galeri: [
-      "https://i.pinimg.com/736x/84/51/5d/84515d6f22e81fa4942647f8610c7456.jpg",
-      "https://i.pinimg.com/736x/30/28/9c/30289c1a9ea3c6dc05f260c6e10ceb7b.jpg",
-      "https://i.pinimg.com/736x/97/a8/bf/97a8bf62226bc443b18762b0e3452cee.jpg"
+      spot2g1,
+      spot2g2,
+      spot2g3
     ],
     fasilitas: [
       { nama: "Toilet", icon: "https://cdn-icons-png.flaticon.com/128/185/185547.png" },
       { nama: "Sewa Alat", icon: "https://cdn-icons-png.flaticon.com/128/2265/2265049.png" },
       { nama: "Parkir", icon: "https://cdn-icons-png.flaticon.com/128/15767/15767705.png" }
     ],
-    ulasan: []
+    ulasan: [
+      { id: 1, user: "A***", komentar: "Tempat nya enak dan dijamin STRIKEE!!!", stars: "4.5" },
+      { id: 2, user: "U**S", komentar: "Tempat nya nyaman banget bOssss", stars: "4.5" }
+    ]
   }
 ]
 

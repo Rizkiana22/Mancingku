@@ -1,14 +1,22 @@
 <template>
   <div class="booking-page">
-    <h2>Form Pemesanan Tiket Mancing</h2>
+    <!-- HEADER -->
+    <div class="booking-header">
+      <router-link :to="`/spot/${route.query.slug}`" class="btn-back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </router-link>
+      <h2 class="booking-title">Form Pemesanan Tiket Mancing</h2>
+    </div>
 
+    <!-- FORM -->
     <form class="booking-form" @submit.prevent="pesanTiket">
       <div class="form-group">
         <label>Tanggal</label>
         <input type="date" v-model="form.tanggal" @change="checkJadwal" required />
       </div>
 
-      <!-- 🔹 Jam Mulai Grid -->
       <div class="form-group">
         <label>Jam Mulai</label>
         <div class="jam-grid">
@@ -65,12 +73,11 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue"
-import { useRoute, useRouter } from "vue-router"
+import { ref, computed } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
-const route = useRoute()
-const router = useRouter()
-const spotId = ref(route.params.spotId || null)
+const route = useRoute();
+const router = useRouter();
 
 const form = ref({
   tanggal: "",
@@ -79,63 +86,59 @@ const form = ref({
   jumlahOrang: 1,
   sewaAlat: "",
   jenisAlat: "",
-})
+});
 
-const semuaJam = ["06:00","07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00"]
+const semuaJam = ["06:00","07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00"];
 
 const dataPenuh = {
   "2025-11-06": ["08:00", "09:00", "14:00"],
   "2025-11-07": ["07:00", "10:00"],
-}
+};
 
 const daftarAlat = [
   { nama: "Joran & Reel Spinning", harga: 15000 },
   { nama: "Joran Bambu Tradisional", harga: 10000 },
   { nama: "Set Pancing Profesional", harga: 25000 },
-]
+];
 
-
-const hargaSpotPerOrangPerJam = 20000
-
-const jadwal = ref([])
-const jamTersedia = ref([])
+const hargaSpotPerOrangPerJam = 20000;
+const jamTersedia = ref([]);
 
 const checkJadwal = () => {
-  const tgl = form.value.tanggal
-  const penuh = dataPenuh[tgl] || []
-  jadwal.value = semuaJam.map(jam => ({ jam, status: penuh.includes(jam) ? "Penuh" : "Tersedia" }))
-  jamTersedia.value = jadwal.value
-}
+  const tgl = form.value.tanggal;
+  const penuh = dataPenuh[tgl] || [];
+  jamTersedia.value = semuaJam.map(jam => ({
+    jam,
+    status: penuh.includes(jam) ? "Penuh" : "Tersedia"
+  }));
+};
 
 const totalBiaya = computed(() => {
-  if (!form.value.durasi || !form.value.jumlahOrang) return 0
-
-  let total = hargaSpotPerOrangPerJam * form.value.durasi * Number(form.value.jumlahOrang)
+  if (!form.value.durasi || !form.value.jumlahOrang) return 0;
+  let total = hargaSpotPerOrangPerJam * form.value.durasi * Number(form.value.jumlahOrang);
   if (form.value.sewaAlat === "ya" && form.value.jenisAlat) {
-    const alat = daftarAlat.find(a => a.nama === form.value.jenisAlat)
-    if (alat) total += alat.harga * form.value.durasi * Number(form.value.jumlahOrang)
+    const alat = daftarAlat.find(a => a.nama === form.value.jenisAlat);
+    if (alat) total += alat.harga * form.value.durasi * Number(form.value.jumlahOrang);
   }
-  return total
-})
+  return total;
+});
 
 const pesanTiket = () => {
   if (!form.value.tanggal || !form.value.jamMulai || !form.value.durasi) {
-    alert("Mohon lengkapi semua field terlebih dahulu.")
-    return
+    alert("Mohon lengkapi semua field terlebih dahulu.");
+    return;
   }
-  const slot = jamTersedia.value.find(s => s.jam === form.value.jamMulai)
+
+  const slot = jamTersedia.value.find(s => s.jam === form.value.jamMulai);
   if (slot && slot.status === "Penuh") {
-    alert("Slot waktu ini sudah penuh. Silakan pilih jam lain.")
-    return
+    alert("Slot waktu ini sudah penuh. Silakan pilih jam lain.");
+    return;
   }
-
-  alert(`✅ Pemesanan berhasil!\n Tanggal: ${form.value.tanggal}\nJam: ${form.value.jamMulai}\nDurasi: ${form.value.durasi} jam\nJumlah Orang: ${form.value.jumlahOrang}\nTotal: Rp${totalBiaya.value.toLocaleString()}`)
-
   router.push({
-    path: `/payment/${spotId.value}`,
-    query: { ...form.value }
-  })
-}
+    path: `/payment/${route.query.slug}`,
+    query: { ...form.value, slug: route.query.slug },
+  });
+};
 </script>
 
 <style scoped>
@@ -149,11 +152,55 @@ const pesanTiket = () => {
   font-family: "Poppins", sans-serif;
 }
 
-h2 { color: #05496c; text-align: center; margin-bottom: 1rem; }
+/* Header Section */
+.booking-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
 
-.booking-form { display: flex; flex-direction: column; gap: 15px; }
+.booking-title {
+  color: #05496c;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0;
+}
 
-.form-group { display: flex; flex-direction: column; gap: 5px; }
+/* Tombol back elegan */
+.btn-back {
+  position: absolute;
+  left: 0;
+  background: #0077cc;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.btn-back:hover {
+  background: #005fa3;
+}
+
+/* Form styling */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 
 .form-group input,
 .form-group select,
@@ -166,8 +213,10 @@ h2 { color: #05496c; text-align: center; margin-bottom: 1rem; }
 }
 
 .form-group input:focus,
-.form-group select:focus,
-.jam-btn:focus { border-color: #0077cc; box-shadow: 0 0 5px rgba(0,119,204,0.3); outline: none; }
+.form-group select:focus {
+  border-color: #0077cc;
+  box-shadow: 0 0 4px rgba(0, 119, 204, 0.3);
+}
 
 button[type="submit"] {
   background-color: #0077cc;
@@ -180,8 +229,11 @@ button[type="submit"] {
   transition: background 0.2s;
 }
 
-button[type="submit"]:hover { background-color: #005fa3; }
+button[type="submit"]:hover {
+  background-color: #005fa3;
+}
 
+/* Jam grid */
 .jam-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
@@ -193,7 +245,29 @@ button[type="submit"]:hover { background-color: #005fa3; }
   background: #f7f7f7;
 }
 
-.jam-btn.selected { background: #0077cc; color: #fff; }
+.jam-btn.selected {
+  background: #0077cc;
+  color: #fff;
+}
 
-.jam-btn.penuh { background: #ffcccc; color: #a00; cursor: not-allowed; }
+.jam-btn.penuh {
+  background: #ffcccc;
+  color: #a00;
+  cursor: not-allowed;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  .booking-page {
+    margin: 20px;
+    padding: 1.5rem;
+  }
+  .booking-title {
+    font-size: 1.3rem;
+  }
+  .btn-back {
+    width: 36px;
+    height: 36px;
+  }
+}
 </style>

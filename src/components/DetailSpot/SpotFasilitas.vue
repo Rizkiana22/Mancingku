@@ -17,7 +17,7 @@
         <div class="harga-info">
           <p>harga per jam<br><b>Rp {{ spot.harga.toLocaleString() }}</b></p>
         </div>
-        <router-link :to="`/bookingpage/${spot.id}`" class="btn-pesan">Pesan Sekarang</router-link>
+        <router-link :to="`/bookingpage/${spot.id}?slug=${spot.slug}`" class="btn-pesan">Pesan Sekarang</router-link>
       </div>
       <p class="kursi">Tersisa 5 kursi!</p>
     </div>
@@ -200,13 +200,12 @@ defineProps({
   font-size: 15px;
 }
 
-.harga {
+.harga-info {
   margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content:right;
   gap: 10px;
-
 }
 
 .harga b {
@@ -232,13 +231,6 @@ defineProps({
 
 .right .kursi{
   color: #e57200;
-}
-.kursi {
-  display: flex;
-  align-items: center;
-  justify-content:right;
-  transform: translateX(-10px);
-  font-size: 15px;
 }
 
 }

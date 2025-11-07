@@ -14,7 +14,7 @@
     <!-- Nav Links -->
     <ul class="nav-links" :class="{ open: isOpen }">
       <li class="link">
-        <RouterLink to="/" @click="closeMenu">BERANDA</RouterLink>
+        <RouterLink to="/Beranda" @click="closeMenu">BERANDA</RouterLink>
       </li>
       <li class="link">
         <RouterLink to="/tentang" @click="closeMenu">TENTANG</RouterLink>
@@ -49,6 +49,9 @@
          <RouterLink to="/profile" @click="closeMenu">
         <button class="btn-profile">Profile</button>
       </RouterLink>
+      <RouterLink to="/Beranda" @click="closeMenu">
+      <button class="btn-logout">Logout</button>
+      </RouterLink>
       </div>
     </ul>
 
@@ -62,6 +65,9 @@
      </RouterLink>
       <RouterLink to="/profile"@click="closeMenu">
         <button class="btn-profile">Profile</button>
+      </RouterLink>
+      <RouterLink to="/Beranda" @click="closeMenu">
+      <button class="btn-logout">Logout</button>
       </RouterLink>
     </div>
   </nav>
@@ -211,7 +217,7 @@ function closeMenu() {
 }
 
 .btn-signIN,
-.btn-signUP, .btn-profile {
+.btn-signUP, .btn-profile, .btn-logout {
   padding: 0.6rem 1.2rem;
   font-weight: 600;
   font-size: clamp(14px, 1vw, 16px);
@@ -223,6 +229,11 @@ function closeMenu() {
 .btn-profile{
   background-color: #1b3c53;
   color: #fff;
+  border: 0px;
+}
+.btn-logout {
+  background-color: #da9723;
+  color: #ffffff;
   border: 0px;
 }
 
@@ -239,6 +250,10 @@ function closeMenu() {
 }
 
 .btn-profile:hover{
+  background: #e28e00;
+}
+
+.btn-logout:hover{
   background: #e28e00;
 }
 .btn-signIN:hover {
@@ -280,7 +295,7 @@ function closeMenu() {
 }
 
 /* === Responsive === */
-@media (max-width: 1200px) {
+@media (max-width: 1302px) {
   .nav-logo a {
     text-decoration: none;
     color: inherit;
@@ -324,10 +339,6 @@ function closeMenu() {
     padding: 8px 0;
   }
 
-  .link a:hover {
-    color: #da9723;
-  }
-
   .desktop-only {
     display: none;
   }
@@ -342,7 +353,7 @@ function closeMenu() {
   }
 
   .btn-signIN,
-  .btn-signUP, .btn-profile {
+  .btn-signUP, .btn-profile, .btn-logout{
     width: 100%;
     font-size: 16px;
     border: none;
@@ -354,14 +365,15 @@ function closeMenu() {
     color: #fff;
   }
 
-  .btn-signUP {
-    background-color: #1b3c53;
+   .btn-logout {
+    background-color: #da9723;
     color: #fff;
   }
 
-  .btn-signIN:hover,
-  .btn-signUP:hover {
-    background-color: #e28e00;
+
+  .btn-signUP {
+    background-color: #1b3c53;
+    color: #fff;
   }
 
   .burger {

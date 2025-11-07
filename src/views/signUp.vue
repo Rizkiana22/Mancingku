@@ -1,6 +1,6 @@
 <template>
-  <div class="signin-container">
-    <div class="signin-box">
+  <div class="signup-container">
+    <div class="signup-box">
       <h2>Mari Mulai</h2>
       <p>Buat akun Anda untuk melanjutkan</p>
 
@@ -60,7 +60,7 @@ function loginUser() {
 </script>
 
 <style scoped>
-.signin-container {
+.signup-container {
   height: 100vh;
   width: 100%;
   background: linear-gradient(
@@ -75,26 +75,14 @@ function loginUser() {
   justify-content: center;
 }
 
-.signin-box {
+.signup-box {
   background: #ffffff;
   padding: 40px 30px;
   border-radius: 16px;
-  width: 90%;
+  width: 50%;
   max-width: 400px;
   text-align: center;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95) translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
 }
 
 h2 {
@@ -154,5 +142,100 @@ input:focus {
 
 .switch-text a:hover {
   text-decoration: underline;
+}
+
+@media (max-width:768px){
+  .signup-container {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("@/assets/Bg.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-box {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  height: 70%;
+  width: 50%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+h2 {
+  color: #1b3c53;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+}
+
+input:focus {
+  border-color: #1b3c53;
+}
+
+.login-btn {
+  width: 100%;
+  background: #1b3c53;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #e28e00;
+}
+
+.forgot {
+  display: block;
+  margin-top: 10px;
+  color: #000;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.switch-text {
+  margin-top: 15px;
+  color: #555;
+  font-size: 12px;
+}
+
+.switch-text a {
+  color: #e28e00;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.switch-text a:hover {
+  text-decoration: underline;
+}
 }
 </style>

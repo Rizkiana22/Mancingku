@@ -53,11 +53,12 @@ function goToSlide(index) {
 </script>
 
 <style scoped>
+
 .image-slider {
   position: relative;
-  width: 100%;
+  width: 500px;
   height: 400px;
-  border-radius: 5px;
+  border-radius: 20px;
   overflow: hidden;
 }
 
@@ -130,6 +131,7 @@ function goToSlide(index) {
 
 @media (max-width: 768px) {
     .image-slider {
+      width: auto;
     height: 55vw;
   }
 

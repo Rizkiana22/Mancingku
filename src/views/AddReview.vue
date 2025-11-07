@@ -30,7 +30,7 @@
   padding: 1.5rem;
   font-family: 'Poppins', sans-serif;
   position: relative;
-  min-height: 78vh;
+  min-height: 85vh;
 }
 
 h2 {

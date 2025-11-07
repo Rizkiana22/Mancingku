@@ -63,6 +63,7 @@
 </template>
 
 <style scoped>
+
 .blog-section {
   max-width: 1200px;
   margin: 100px auto 10px;
@@ -87,6 +88,7 @@
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease;
+  text-decoration: none;
 }
 
 .blog-card:hover {

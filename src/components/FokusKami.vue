@@ -73,8 +73,7 @@
   }
 
   .fokus-container {
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: center;
     padding: 10px;
     overflow-x: hidden;
   }
@@ -85,8 +84,8 @@
   }
 
   .fokus-item img {
-    width: 70px;
-    height: 70px;
+    width:50px;
+    height: 50px;
   }
 
   .fokus-item h3 {

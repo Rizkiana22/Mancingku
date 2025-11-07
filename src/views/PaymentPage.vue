@@ -3,10 +3,10 @@
     <h2 class="title">Pembayaran Tiket Mancing</h2>
 
     <div class="btn-back">
-  <router-link :to="`/bookingpage/${route.params.id}`">
-    <button>←</button>
-  </router-link>
-</div>
+     <router-link :to="{ path: `/BookingPage/${route.params.slug}`, query: route.query }">
+        <button>←</button>
+      </router-link>
+    </div>
 
     <div class="payment-container">
       <!-- Metode Pembayaran -->
@@ -140,43 +140,53 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
 const router = useRouter();
 
-// Ambil data dari query
-const nama = route.query.nama || "-";
+const nama = route.query.slug || "-"; 
 const tanggal = route.query.tanggal || "-";
 const jamMulai = route.query.jamMulai || "-";
-const durasi = route.query.durasi || "1";
-const jumlahOrang = route.query.jumlahOrang || "1";
+const durasi = Number(route.query.durasi) || 1;
+const jumlahOrang = Number(route.query.jumlahOrang) || 1;
+const sewaAlat = route.query.sewaAlat || "tidak";
+const jenisAlat = route.query.jenisAlat || "";
 
-// Hitung total
+// daftar harga alat
+const daftarAlat = [
+  { nama: "Joran & Reel Spinning", harga: 15000 },
+  { nama: "Joran Bambu Tradisional", harga: 10000 },
+  { nama: "Set Pancing Profesional", harga: 25000 },
+];
+
+// hitung biaya mancing
 const hargaPerJam = 20000;
-const subtotal = hargaPerJam * Number(durasi) * Number(jumlahOrang);
+let subtotalSpot = hargaPerJam * durasi * jumlahOrang;
+
+// hitung jika sewa alat
+let subtotalAlat = 0;
+if (sewaAlat === "ya" && jenisAlat) {
+  const alat = daftarAlat.find((a) => a.nama === jenisAlat);
+  if (alat) {
+    subtotalAlat = alat.harga * durasi * jumlahOrang;
+  }
+}
+
+// subtotal = spot + alat
+const subtotal = subtotalSpot + subtotalAlat;
+
+// total = subtotal + pajak
 const pajak = 2500;
 const total = subtotal + pajak;
 
-// Metode pembayaran
+// daftar metode pembayaran
 const methods = [
-  {
-    name: "QRIS",
-    logo: "https://tse1.mm.bing.net/th/id/OIP.SJk3_1NbGUAvZ-bJslHM4wHaC0?pid=Api&P=0&h=180",
-  },
-  {
-    name: "BCA",
-    logo: "https://tse2.mm.bing.net/th/id/OIP.SIiH0GXVJKMQl0Lary6_rQHaHa?pid=Api&P=0&h=180",
-  },
-  {
-    name: "Mandiri",
-    logo: "https://tse4.mm.bing.net/th/id/OIP.L2HwHrcAI66hMbOuhvYH-wHaFj?pid=Api&P=0&h=180",
-  },
-  {
-    name: "Dana",
-    logo: "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,f_auto,q_auto:best,w_640/v1634025439/01gmcdxz8g143r0r2kebz7gpsf.jpg",
-  },
+  { name: "QRIS", logo: "https://tse1.mm.bing.net/th/id/OIP.SJk3_1NbGUAvZ-bJslHM4wHaC0?pid=Api&P=0&h=180" },
+  { name: "BCA", logo: "https://tse2.mm.bing.net/th/id/OIP.SIiH0GXVJKMQl0Lary6_rQHaHa?pid=Api&P=0&h=180" },
+  { name: "Mandiri", logo: "https://tse4.mm.bing.net/th/id/OIP.L2HwHrcAI66hMbOuhvYH-wHaFj?pid=Api&P=0&h=180" },
+  { name: "Dana", logo: "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,f_auto,q_auto:best,w_640/v1634025439/01gmcdxz8g143r0r2kebz7gpsf.jpg" },
 ];
 
 const selectedMethod = ref(null);
@@ -199,46 +209,44 @@ const lanjutkanPembayaran = () => {
     showQRISModal.value = true;
     return;
   }
-
   if (selectedMethod.value === "BCA") {
     showBCAModal.value = true;
     return;
   }
-
   if (selectedMethod.value === "Mandiri") {
     showMandiriModal.value = true;
     return;
   }
-
   if (selectedMethod.value === "Dana") {
     showDanaModal.value = true;
-    return;    
+    return;
   }
 
-
   alert(`✅ Pembayaran berhasil melalui ${selectedMethod.value}!`);
-  router.push("/"); // redirect ke halaman utama
+  router.push("/");
 };
 
 const closeModal = () => {
-  showQRISModal.value = false
-  showBCAModal.value = false
-  showMandiriModal.value = false
-  showDanaModal.value = false
-}
+  showQRISModal.value = false;
+  showBCAModal.value = false;
+  showMandiriModal.value = false;
+  showDanaModal.value = false;
+};
 
-
-// Format angka ribuan
 const formatNumber = (num) => num.toLocaleString("id-ID");
 </script>
 
 <style scoped>
 
 .btn-back{
-  position: absolute;
-  top:60px;
-  left:45vh;
-
+ width: 100%;
+ display: flex;
+ justify-content:left;
+ align-items: center;
+ padding-left: 20vh;
+  margin-bottom: 10px;
+  position: relative;
+  top: -59px;
 }
 
 .btn-back button{
@@ -252,6 +260,7 @@ const formatNumber = (num) => num.toLocaleString("id-ID");
 .btn-back button:hover{
   color: #f79e1b; 
 }
+
 .payment-page {
   display: flex;
   flex-direction: column;
@@ -531,7 +540,13 @@ const formatNumber = (num) => num.toLocaleString("id-ID");
   margin-top: 8px;
 }
 /* === Responsif untuk mobile === */
-@media (max-width: 768px) {
+@media (max-width: 964px) {
+  .title {
+  color: #fff;
+  margin-bottom: 5px;
+  font-size: 1.4rem;
+  text-align: center;
+}
   .payment-container {
     flex-direction: column;
     align-items: center;
@@ -540,6 +555,69 @@ const formatNumber = (num) => num.toLocaleString("id-ID");
   .payment-methods,
   .payment-summary {
     width: 90%;
+  }
+
+.btn-back {
+    position: relative;
+    top: -90px;            
+    padding-left: 5px;   
+    margin-bottom: 5px;  
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .btn-back button {
+    background: transparent;
+    color: #fff;
+    border: none;
+    font-size: 40px;      /* lebih kecil di HP */
+    cursor: pointer;
+  }
+
+  .btn-back button:hover {
+    color: #f79e1b;       /* efek hover */
+  }
+}
+
+@media (max-width: 359px) {
+
+  .title {
+  color: #fff;
+  margin-bottom: 5px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+  .payment-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .payment-methods,
+  .payment-summary {
+    width: 90%;
+  }
+
+.btn-back {
+    position: relative;
+    top: -120px;            
+    padding-left: 10px;   
+    margin-bottom: 5px;  
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .btn-back button {
+    background: transparent;
+    color: #fff;
+    border: none;
+    font-size: 40px;      /* lebih kecil di HP */
+    cursor: pointer;
+  }
+
+  .btn-back button:hover {
+    color: #f79e1b;       /* efek hover */
   }
 }
 </style>

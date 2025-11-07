@@ -37,8 +37,8 @@ defineProps({
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   overflow: hidden;
+  align-items: center;
 }
-
 .spot-img {
   width: 180px;
   height: 130px;

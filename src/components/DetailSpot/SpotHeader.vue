@@ -20,7 +20,7 @@
       <p><strong>Kapasitas:</strong> {{ spot.capacity }} kursi</p>
       <p class="alamat">📍 {{ spot.alamat }}</p>
       <p class="rating">
-        ⭐ {{ spot.rating }} ({{ spot.ulasan.length }} ulasan)
+        ⭐ {{ spot.rating }} (20 ulasan)
       </p>
 
       <h2>Ulasan Pengunjung</h2>
@@ -64,6 +64,7 @@ defineProps({
 .image-section {
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
 }
 
 .main-image {

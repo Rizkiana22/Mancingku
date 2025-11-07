@@ -35,12 +35,8 @@
         </ul>
       </div>
 
-      <!-- Tombol Logout -->
-      <button class="logout-btn" @click="logout">
-        <i class="ri-logout-box-line"></i> LogOut
-      </button>
-    </aside>
 
+    </aside>
     <!-- Content -->
     <main class="profile-content">
       <h2>{{ pageTitle }}</h2>
@@ -55,7 +51,7 @@
 
           <label>
             Nama Lengkap
-            <input type="text" v-model="name" readonly/>
+            <input type="text" v-model="name" placeholder="Masukan nama lengkap Anda"/>
           </label>
 
           <label>
@@ -65,8 +61,12 @@
 
           <label>
             Nomor Telepon
-            <input type="text" v-model="phone" readonly/>
+            <input type="text" v-model="phone" placeholder="contoh: 081234567"/>
           </label>
+          <div class="save-container">
+<button class="btn-save">Simpan</button>
+          </div>
+          
         </form>
       </div>
 
@@ -103,9 +103,7 @@ const showTickets = ref(false);
 const selectedTicket = ref(null);
 
 const username = ref("Username");
-const name = ref("Username13");
 const email = ref("Us****ame13@gmail.com");
-const phone = ref("081*****789");
 
 const tickets = ref([
   { id: 1, spot: "Saung Kemangi", date: "2025-11-05", amount: 2, price: 50000 },
@@ -128,12 +126,6 @@ function selectTicket(ticket) {
   activeMenu.value = "tiket";
   selectedTicket.value = ticket;
 }
-
-function logout() {
-  localStorage.removeItem("isLoggedIn");
-  localStorage.removeItem("username");
-  router.push("/signin");
-}
 </script>
 
 <style scoped>
@@ -141,10 +133,11 @@ function logout() {
 
 .profile-container {
   display: flex;
-  height: 100vh;
+  height: 90vh;
   background: linear-gradient(135deg, #005f85, #00344d);
   color: #fff;
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 .ticket-owner {
   margin-top: 10px;
@@ -240,22 +233,6 @@ function logout() {
   color: #ffb341;
 }
 
-.logout-btn {
-  background: transparent;
-  border: none;
-  color: #ffb341;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.logout-btn:hover {
-  color: #fff;
-}
-
 /* === Content === */
 .profile-content {
   flex: 1;
@@ -276,6 +253,7 @@ h2 {
   flex-direction: column;
   gap: 20px;
   max-width: 800px;
+  
 }
 
 label {
@@ -293,11 +271,35 @@ input {
   outline: none;
   font-size: 15px;
   color: #333;
+   background: #e8e8e8;
+  color: #777;
 }
 
 input[readonly] {
   background: #e8e8e8;
   color: #777;
+} 
+
+.save-container{
+  justify-content: center;
+  display: flex;
+}
+
+.btn-save{
+  border: none;
+  border-radius: 5px;
+  height: auto;
+  width: 20vh;
+  background-color: #ffb341;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.btn-save:hover{
+ background-color:#e28e00; 
 }
 
 /* Detail tiket */
@@ -311,21 +313,12 @@ input[readonly] {
 }
 
 /* === Responsive === */
-@media (max-width: 900px) {
-
-  .logout-btn {
-  margin-right: 20px; /* kasih jarak dari tepi kanan */
-  padding: 6px 10px;
-  background: transparent;
-  color: #ffb341;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
+@media (max-width: 768px) {
+ 
   .profile-container {
     flex-direction: column;
-    background: #004160; /* ganti gradient ke warna solid biar rapi di HP */
+    color: white;
+    background: #004160; 
     overflow-x: hidden;
   }
 
@@ -349,18 +342,30 @@ input[readonly] {
 
   .profile-content {
     padding: 20px;
-    background: #fff; /* ubah jadi putih supaya teks terbaca */
-    color: #222;
+    background: #004160; /* ubah jadi putih supaya teks terbaca */
     border-radius: 0;
   }
 
   label {
-    color: #222;
+    color: #ffffff;
   }
 
   h2 {
-    color: #05496c;
+    color: #ffffff;
   }
+
+  .btn-save{
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  width: 30vh;
+  background-color: #ffb341;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: 0.3s;
+}
 
   .ticket-detail {
     width: 100%;

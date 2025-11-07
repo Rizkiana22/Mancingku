@@ -11,10 +11,9 @@
       </div>
 
       <div class="add-comment">
-  <router-link :to="`/comment/add/${spot.id}`" class="btn-tambah">
-  Tambah Komentar
-</router-link>
-
+        <router-link :to="`/comment/add/${spot.id}`" class="btn-tambah">
+        Tambah Komentar
+        </router-link>
       </div>
 
 
@@ -79,7 +78,10 @@ const dummyData = [
     id: 2,
     slug: "situ-ciburuy",
     nama: "Situ Ciburuy",
-    ulasan: []
+    ulasan: [
+      { id: 1, user: "A***", komentar: "Tempat nya enak dan dijamin STRIKEE!!!", stars: "4.5" },
+      { id: 2, user: "U**S", komentar: "Tempat nya nyaman banget bOssss", stars: "4.5" },
+  ]
   }
 ]
 
@@ -120,6 +122,7 @@ display: flex;
   background: #fff;
   padding: 1rem 6vw;
   font-family: 'Poppins', sans-serif;
+  min-height: 86vh;
   color: #222;
 }
 
@@ -192,6 +195,7 @@ color: #005fa3;
   text-decoration: none;
   transition: color 0.2s, transform 0.2s;
   line-height: 1;
+  margin-top: 80px;
 }
 
 .btn-tambah {
@@ -208,5 +212,7 @@ color: #005fa3;
   transition: all 0.2s ease;
   box-shadow: 0 3px 5px rgba(0,0,0,0.2);
 }
+
+
 }
 </style>
