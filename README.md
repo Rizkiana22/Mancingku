@@ -53,10 +53,10 @@ Menampilkan informasi lengkap spot memancing, termasuk:
   - Barcode tiket
 
 ## Screenshot / Preview
-### Beranda dan Spot
+### Beranda dan Blog
 <img width="1912" height="946" alt="image" src="https://github.com/user-attachments/assets/56f7f37b-364a-42b3-9362-298acff077d7" />
 
-<img width="1918" height="944" alt="image" src="https://github.com/user-attachments/assets/8836ff16-06e9-4198-91e7-35f16880a897" />
+<img width="1915" height="945" alt="image" src="https://github.com/user-attachments/assets/70d40b88-ae6d-4e8a-b26e-9711495b5421" />
 
 
 ### Tentang
@@ -64,23 +64,28 @@ Menampilkan informasi lengkap spot memancing, termasuk:
 
 
 ### Pencarian spot dan detail spot
-<img width="1905" height="918" alt="image" src="https://github.com/user-attachments/assets/c06330ed-6d46-41ec-b65e-7a5ef3ebe34f" />
+<img width="1919" height="941" alt="image" src="https://github.com/user-attachments/assets/50da39b7-739a-4b0b-95a1-ee3245265563" />
 
-<img width="1918" height="915" alt="image" src="https://github.com/user-attachments/assets/1441c468-5b28-4015-bd95-31b24b07813b" />
+
+<img width="1919" height="946" alt="image" src="https://github.com/user-attachments/assets/bedf6a22-0bb4-4b70-85d9-30b90df8e6d8" />
+
 
 ### Booking dan payment
-<img width="1916" height="929" alt="image" src="https://github.com/user-attachments/assets/0efd8286-36a7-4d48-83f7-b38a940466df" />
+<img width="1915" height="938" alt="image" src="https://github.com/user-attachments/assets/cef0bce0-1f59-4d94-8d95-3a69e8ab4a49" />
 
-<img width="1911" height="946" alt="image" src="https://github.com/user-attachments/assets/fb2d8f1a-5e18-421f-b058-1fa261f8150a" />
+<img width="1919" height="952" alt="image" src="https://github.com/user-attachments/assets/1eb5ac4c-4396-4bfb-a055-ddf638d5d1cc" />
+
 
 
 ### Peralatan dan Umpan
-<img width="1919" height="911" alt="image" src="https://github.com/user-attachments/assets/a2dc7d84-3b98-4f66-9fcc-ac351865b8fe" />
+<img width="1918" height="956" alt="image" src="https://github.com/user-attachments/assets/8648b4ed-b672-460e-a044-18c00d108ae9" />
+
 
 ### Profil dan Tiket
-<img width="1901" height="912" alt="image" src="https://github.com/user-attachments/assets/0f4e9f35-cecc-4911-b06f-251568c6ed0e" />
+<img width="1918" height="947" alt="image" src="https://github.com/user-attachments/assets/6d0e70d0-126b-42fe-95b1-c64270ab27d7" />
 
-<img width="1899" height="915" alt="image" src="https://github.com/user-attachments/assets/af39a380-643d-4821-8c4b-d8ed0eb5d61f" />
+<img width="1919" height="950" alt="image" src="https://github.com/user-attachments/assets/7ddb5232-4018-4745-bbb2-efa1fcaa36ad" />
+
 
 
 ## Recommended IDE Setup
